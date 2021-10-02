@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session & Cookies Practice</title>
+</head>
+<body <%= locals.data && data.color ? 'style=background-color:' + data.color : '' %>>
+    <h2>Login</h2>
+
+    <% if(locals.data) {%>
+        <p>Hola <%= data.name %>, elegiste el color: <%= data.color == '#008B8B' ? 'Azul' : data.color == '#8FBC8F' ? 'Verde' : 'Amarillo' %>, tu email es:
+            <%= data.email %> y tu edad es: <%= data.age %></p>
+    <% } %>
+    <% if(locals.errors) { %>
+        <% for(let anError in errors) { %>
+            <p style="color: red"><%= errors[anError].msg %></p>
+        <% } %>
+    <% } %>
+    <form action="/" method="POST">
+        <br>
+        <label for="name">Ingrese su nombre:</label>
+        <input 
+            type="text" name="name" 
+            value="<%= locals.oldData ? oldData.name : null %>">
+        <br><br>
+        <label for="color">Elige un color</label>
+        <select name="color">
+            <option value="">Selecciona</option>
+            <option value="#008B8B">Azul</option>
+            <option value="#8FBC8F">Verde</option>
+            <option value="#FFFF00">Amarillo</option>
+        </select>
+        <br><br>
+        <label for="email">Ingrese su email:</label>
+        <input 
+            type="email" name="email" 
+            value="<%= locals.oldData ? oldData.email : null %>">
+        <br><br>
+        <label for="age">Ingrese su edad:</label>
+        <input 
+            type="text" name="age" 
+            value="<%= locals.oldData ? oldData.age : null %>">
+        <br><br>
+        <label for="recordar">Recordar color:</label>
+        <input type="checkbox" name="recordar" id="recordar">
+        <br><br>
+        <button type="submit">Enviar</button>
+        <br><br>
+        <button><a href="/borrar" style="text-decoration: none; color: black;">Olvidar Color</a></button>
+    </form>
+</body>
+</html>

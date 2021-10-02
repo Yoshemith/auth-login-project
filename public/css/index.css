@@ -1,0 +1,13 @@
+html, body {
+    background-color: teal;
+    margin:0px;
+    height: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+main{
+    text-align: center;
+    /* border: 1px dotted yellow; */
+    width: 100%;
+}
