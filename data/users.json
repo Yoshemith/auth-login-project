@@ -1,0 +1,26 @@
+[
+ {
+  "id": 1,
+  "name": "Luis Martinez",
+  "email": "luismartínez@correo.com",
+  "password": "1234567",
+  "country": "Mexico",
+  "image": "profile-user.png"
+ },
+ {
+  "id": 2,
+  "name": "Mario Gomez",
+  "email": "asd@mail.com",
+  "password": "qwerty123",
+  "country": "Alemania",
+  "image": "profile-user.png"
+ },
+ {
+  "id": 3,
+  "name": "Mariana Castro",
+  "email": "mari@mail.com",
+  "password": "mari12345",
+  "country": "USA",
+  "image": "profile-user.png"
+ }
+]
