@@ -34,7 +34,7 @@ form.create-form{
     padding: 8px 0px 0px 20px;
     color: white;
 }
-.titulo-create h2{
+.titulo-create h3{
     font-size: 18px;  /* 22px */
     margin-top: 5px;
     margin-bottom: 12px;
@@ -51,17 +51,6 @@ form.create-form{
     font-size: 15px;
     font-weight: 600;
 }
-
-/*
-.control-form p label{
-    display: inline-block;
-    font-weight: normal;
-}
-
-.control-form p {
-    margin-bottom: 5px;
-    padding-left: 10px;
-} */
 .control-form input{
     border-radius: 5px;
     border: none;
@@ -101,63 +90,6 @@ form.create-form{
     align-content: center; */
     width: 100%;
 }
-.control-form-container label{
-    color: white;
-    margin-bottom: 10px;
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-}
-.container{
-    width: 100%;
-    /* height: 250px; */
-    background-color: var(--formfondo);
-    border-radius: 20px;
-    border: 2px dashed #e0eafc;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-.drag-area{
-    height: 200px; /* 300 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px auto;
-}
-.drag-area .drag-icon{
-    font-size: 40px; /* 50 */
-    color: #F2F4F4;
-}
-
-.drag-area .drag-header{
-    font-size: 15px; /*20px */
-    font-weight: 500;
-    color: #F2F4F4;
-}
-.drag-area .drag-support{
-    font-size: 10px; /* 12px */
-    color: gray;
-    margin:  10px 0 15px 0;
-}
-#productImage{
-    display: none;
-}
-.drag-area .browse-button{
-    font-size: 15px; /* 20px */
-    font-weight: 500;
-    color: var(--verdeagua);
-    cursor: pointer;
-}
-.container.active{
-    border: 2px solid var(--verdeagua);
-}
-.container img {
-    text-align: center;
-    width: 100%;
-    height: 250px;
-    object-fit: contain;
-    border-radius: 20px;
-}
 .text-danger{
     color: red;
     margin-top: 6px;
@@ -174,8 +106,8 @@ form.create-form{
     height: 65px;
     border-radius: 15px ;
     font-weight: bold;
-    font-size: 16pxpx; /* 20px */
-    background-color: var(--verdeagua);
+    font-size: 16px; /* 20px */
+    background-color: #04C58D;
 }
 .cancel-button button{
     /* border: solid 1px blue; */

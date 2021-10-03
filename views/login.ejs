@@ -5,21 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingresar</title>
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <H2>Formulario de Login</H2>
-    <form action="/" method="POST">
-        <br>
-        <label for="email">Correo Electronico:</label>
-        <input type="email" name="email">
-        <br><br>
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password">
-        <br><br>
-        <label for="recordar">Recordarme:</label>
-        <input type="checkbox" name="recordar" id="recordar">
-        <br><br>
-        <button type="submit">Ingresar</button>
+    <%- include('./header.ejs') %>
+    <br>
+    <div class="titulo-create">
+        <h3>Formulario de Login</h3>
+    </div>
+    <form action="/" method="POST" class="create-form" enctype="multipart/form-data">
+        <div class="control-form">
+            <label for="email">Correo Electronico:</label>
+            <input type="email" name="email" placeholder="Ingresa E-mail" class="control">
+        </div>
+        <div class="control-form">
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" placeholder="*******" class="control">
+        </div>
+        <div class="control-form">
+            <label for="recordar">
+                <input type="checkbox" name="recordar" id="recordar"> Recordarme 
+            </label>
+        </div>
+        <div class="control-buttons">
+            <div class="create-button">
+                <button type="submit">REGISTRARSE</button>
+            </div>
+            <div class="cancel-button">
+                <button type="reset">CANCELAR</button>
+            </div>
+        </div>
     </form>
 </body>
 </html>

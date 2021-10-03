@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <H2 style="color:red;">Formulario de registro XD</H2>
-    <form action="/" method="POST">
-    </form>
+    <%- include('./header.ejs') %>
     <div class="titulo-create">
-        <h2>Formulario de registro</h2>
+        <h3>Formulario de registro</h3>
     </div>
-    <form action="/products" method="POST" class="create-form" enctype="multipart/form-data">
+    <form action="/login" method="POST" class="create-form" enctype="multipart/form-data">
         <div class="control-form" >
             <label for="name">Nombre completo:</label>
             <input 
@@ -62,25 +60,7 @@
         </div>
         <div class="control-form">
             <label for="file">Imagen de perfil:</label>
-            <input type="file" name="file" class="control">
-        </div>
-        <div class="control-form-container">
-            <label for="container">Imagen de perfil:</label>
-            <div class="container">
-                <div class="drag-area">
-                    <div class="drag-icon">
-                        <i class="fas fa-image"></i>
-                    </div>
-                    <span class="drag-header"> Presiona o haz click</span>
-                    <span class="drag-header"> aqui para 
-                        <span class="browse-button"> elegir un archivo</span>
-                    </span>
-                    <span class="drag-support">
-                        Soportados: JPEG, JPG, PNG
-                    </span>
-                </div>
-            </div>
-            <input type="file" name="productImage" id="productImage">
+            <input type="file" name="profileImage" class="control">
             <% if(locals.errors && errors.productImage) { %>
                 <div class="text-danger">
                         <p><%= errors.productImage.msg %></p>
@@ -92,7 +72,7 @@
                 <button type="submit">REGISTRARSE</button>
             </div>
             <div class="cancel-button">
-                <button type="reset" onClick="window.location.href=window.location.href">CANCELAR</button>
+                <button type="reset">CANCELAR</button>
             </div>
         </div>
     </form>
