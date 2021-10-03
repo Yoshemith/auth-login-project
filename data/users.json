@@ -11,7 +11,7 @@
   "id": 2,
   "name": "Mario Gomez",
   "email": "asd@mail.com",
-  "password": "qwerty123",
+  "password": "$2a$10$m5kDP4yd3WtLvIUdm0yjoe1rdmma4AgzU2.dKpicLEH22AkUNakGm",
   "country": "Alemania",
   "image": "profile-user.png"
  },
@@ -20,6 +20,22 @@
   "name": "Mariana Castro",
   "email": "mari@mail.com",
   "password": "mari12345",
+  "country": "USA",
+  "image": "profile-user.png"
+ },
+ {
+  "id": 4,
+  "name": "Gabian mathics",
+  "email": "gabasd@mail.com",
+  "password": "$2a$10$g4fBT.TwWaqD30OFoW940OGL7IuNFtKVyRkBkL12pFM7BpGsgAcvO",
+  "country": "Rusia",
+  "image": "profile-user.png"
+ },
+ {
+  "id": 5,
+  "name": "Randoma",
+  "email": "randoma@mail.com",
+  "password": "$2a$10$SXtTQbMbc42hdCTCEG5BHuM/qwseZic/NqTMdwEtFGNSL3JHqFVa.",
   "country": "USA",
   "image": "profile-user.png"
  }

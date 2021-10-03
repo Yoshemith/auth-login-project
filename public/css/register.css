@@ -94,6 +94,7 @@ form.create-form{
     color: red;
     margin-top: 6px;
     padding-left: 0px;
+    font-size: 13px;
 }
 .control-buttons{
     /* border: solid 1px yellow; */
