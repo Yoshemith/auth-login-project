@@ -5,32 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registarse</title>
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <H2>Formulario de registro</H2>
+    <H2 style="color:red;">Formulario de registro XD</H2>
     <form action="/" method="POST">
-        <br>
-        <label for="name">Nombre completo:</label>
-        <input type="text" name="name" >
-        <br><br>
-        <label for="email">Correo Electronico:</label>
-        <input type="email" name="email">
-        <br><br>
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password">
-        <br><br>
-        <label for="color">Pais de origen</label>
-        <select name="color">
-            <option value="">Selecciona el pais</option>
-            <option value="Mexico">Mexico</option>
-            <option value="USA">USA</option>
-            <option value="Alemania">Alemania</option>
-        </select>
-        <br><br>
-        <label for="file">Imagen de perfil:</label>
-        <input type="file" name="file">
-        <br><br>
-        <button type="submit">Registarse</button>
+    </form>
+    <div class="titulo-create">
+        <h2>Formulario de registro</h2>
+    </div>
+    <form action="/products" method="POST" class="create-form" enctype="multipart/form-data">
+        <div class="control-form" >
+            <label for="name">Nombre completo:</label>
+            <input 
+                type="text" 
+                name="name" 
+                id="name" 
+                placeholder="Ingresa nombre del producto" 
+                class="control <%= locals.errors && errors.name ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.name : null %>"
+            >
+            <!-- The 'is-invalid' class added tag is not working for adding icon -->
+            <% if(locals.errors && errors.name) { %>
+                <div class="text-danger">
+                        <p><%= errors.name.msg %></p>
+                </div>
+            <% } %>
+        </div>
+        <div class="control-form">
+            <label for="email">Correo Electronico:</label>
+            <input type="email" name="email" placeholder="Ingresa E-mail" class="control">
+        </div>
+        <div class="control-form">
+            <label for="password">Contraseña:</label>
+           <input type="password" name="password" placeholder="*******" class="control">
+        </div>
+        <div class="control-form">
+            <% 
+                let categories = ['Mexico', 'USA', 'Alemania', 'Rusia', 'Suiza'];
+            %>
+            <label for="category">Pais de origen:</label>
+            <select name="category" id="category" >
+                <option value="" disabled selected hidden>-Selecciona el pais-</option>
+                <% for(const aCategory of categories) {%>
+                    <option 
+                        value="<%= aCategory %>"
+                        <%= locals.oldData && (aCategory === oldData.category ? 'selected' : null ) %>
+                    > <%= aCategory %> </option>
+                <% } %>
+            </select>
+            <% if(locals.errors && errors.category) { %>
+                <div class="text-danger">
+                        <p><%= errors.category.msg %></p>
+                </div>
+            <% } %>
+        </div>
+        <div class="control-form">
+            <label for="file">Imagen de perfil:</label>
+            <input type="file" name="file" class="control">
+        </div>
+        <div class="control-form-container">
+            <label for="container">Imagen de perfil:</label>
+            <div class="container">
+                <div class="drag-area">
+                    <div class="drag-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <span class="drag-header"> Presiona o haz click</span>
+                    <span class="drag-header"> aqui para 
+                        <span class="browse-button"> elegir un archivo</span>
+                    </span>
+                    <span class="drag-support">
+                        Soportados: JPEG, JPG, PNG
+                    </span>
+                </div>
+            </div>
+            <input type="file" name="productImage" id="productImage">
+            <% if(locals.errors && errors.productImage) { %>
+                <div class="text-danger">
+                        <p><%= errors.productImage.msg %></p>
+                </div>
+            <% } %>
+        </div>
+        <div class="control-buttons">
+            <div class="create-button">
+                <button type="submit">REGISTRARSE</button>
+            </div>
+            <div class="cancel-button">
+                <button type="reset" onClick="window.location.href=window.location.href">CANCELAR</button>
+            </div>
+        </div>
     </form>
 </body>
 </html>

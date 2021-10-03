@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #C9CBCD;
+    background-image: url(/img/home-wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+}
+main.create-product-main{
+    margin-top: 15px; /* 20px */
+    margin-bottom: 40px;
+}
+.create-form{
+    padding: 20px 20px;
+    margin: auto;
+    background-color: #ebebeb;
+    border: solid 2px #323434;
+    border-radius: 10px;
+}
+.control input:focus{
+    border: var(--verdeagua) 1px solid;
+}
+
+form.create-form{
+    background-color: #323434;
+    margin: 0px 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
+}
+.titulo-create{
+    padding: 8px 0px 0px 20px;
+    color: white;
+}
+.titulo-create h2{
+    font-size: 18px;  /* 22px */
+    margin-top: 5px;
+    margin-bottom: 12px;
+}
+.control-form{
+    margin-bottom: 15px;
+    width: 100%;
+    /* border: solid 10px green; */
+}  
+.control-form label {
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/*
+.control-form p label{
+    display: inline-block;
+    font-weight: normal;
+}
+
+.control-form p {
+    margin-bottom: 5px;
+    padding-left: 10px;
+} */
+.control-form input{
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    padding-left: 10px;
+}
+.control-form textarea{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 100%;
+}
+.control-form select{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 6px;
+    background-color: white;
+    text-overflow: ellipsis;
+}
+.control-form select:required:invalid {
+    color: #666;
+}
+.control-form option[value=""][disabled] {
+    display: none;
+}
+.control-form option {
+    color: #000;
+}
+.control{
+    width: 100%;
+    height: 40px;
+}
+.control-form-container{
+    /* align-items: center;
+    align-content: center; */
+    width: 100%;
+}
+.control-form-container label{
+    color: white;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+}
+.container{
+    width: 100%;
+    /* height: 250px; */
+    background-color: var(--formfondo);
+    border-radius: 20px;
+    border: 2px dashed #e0eafc;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.drag-area{
+    height: 200px; /* 300 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px auto;
+}
+.drag-area .drag-icon{
+    font-size: 40px; /* 50 */
+    color: #F2F4F4;
+}
+
+.drag-area .drag-header{
+    font-size: 15px; /*20px */
+    font-weight: 500;
+    color: #F2F4F4;
+}
+.drag-area .drag-support{
+    font-size: 10px; /* 12px */
+    color: gray;
+    margin:  10px 0 15px 0;
+}
+#productImage{
+    display: none;
+}
+.drag-area .browse-button{
+    font-size: 15px; /* 20px */
+    font-weight: 500;
+    color: var(--verdeagua);
+    cursor: pointer;
+}
+.container.active{
+    border: 2px solid var(--verdeagua);
+}
+.container img {
+    text-align: center;
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+.text-danger{
+    color: red;
+    margin-top: 6px;
+    padding-left: 0px;
+}
+.control-buttons{
+    /* border: solid 1px yellow; */
+    text-align: center;
+}
+.create-button button{
+    margin-top: 20px;
+    border: none;
+    width: 90%;
+    height: 65px;
+    border-radius: 15px ;
+    font-weight: bold;
+    font-size: 16pxpx; /* 20px */
+    background-color: var(--verdeagua);
+}
+.cancel-button button{
+    /* border: solid 1px blue; */
+    border: none;
+    margin-top: 20px;
+    width: 35%;
+    height: 65px;
+    border-radius: 15px ;
+    color: #C77C91;
+    font-size: 16px;    /* 20px */
+    background-color: #323434;
+}
+
+.create-button button:hover{
+ background-color: #0084CC;
+ color: white;  
+}
+
+.cancel-button button:hover{
+    background-color: #912644;
+    color: black;  
+    font-weight: bold;
+}
+
+@media (min-width: 481px) { 
+    .titulo-create{
+        text-align: center;
+    }
+    .create-button button{
+        width: 70%;
+    }    
+}
+@media (min-width: 769px) { 
+    form.create-form{
+        margin: auto;
+        width: 50%;
+        
+    }   
+    .create-button button{
+        width: 60%;
+    } 
+}
+@media (min-width: 1280px) { 
+    .create-form{
+        width: 50%;
+    }    
+}

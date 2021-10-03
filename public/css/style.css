@@ -63,15 +63,18 @@ label #close{
 
 main p{
     font-weight: 600;
-    color: white;
+    color: #C9CBCD;
     text-align: center;
     width: 100%;
     margin-top: 60px;
 }
+main p a:hover{
+    color: rgb(49, 112, 175);
+}
 main p a{
     text-decoration: none;
     
-    color: #935778;
+    color: #C9CBCD;
 }
 main p a i{
     font-size: 28px;
