@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #C9CBCD;
+    background-image: url(/img/home-wallpaper.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Montserrat', sans-serif;
+}
+nav{
+    height: 80px;
+    background-color: rgb(245, 246, 247, .8);
+}
+
+h2{
+    line-height: 80px;
+    display: inline-block;
+    margin-left: 40px;
+    color: rgb(52, 58, 64);
+}
+ul{
+    float: right;
+    margin-right: 40px;
+    list-style: none;
+}
+ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 10px;
+}
+
+ul li a{
+    text-decoration: none;
+    font-weight: lighter;
+    color: rgb(52, 58, 64);
+}
+ul li a i{
+ font-size: 28px;
+}
+
+ul li a:hover{
+    color: rgb(49, 112, 175);
+    font-weight: 600;
+}
+
+label #btn,
+label #close{
+    color: #343A40;
+    font-size: 20px;
+    float: right;
+    margin-right: 40px;
+    line-height: 80px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+main p{
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin-top: 60px;
+}
+main p a{
+    text-decoration: none;
+    
+    color: #935778;
+}
+main p a i{
+    font-size: 28px;
+}
+
+@media (max-width: 992px){
+    label #btn{
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        margin-right: 0;
+        right: -100%;
+        top: 80px;
+        background-color: #C9CBCD;
+        text-align: center;
+        transition: .5s;
+    }
+    ul li{
+        display: block;
+        line-height: 10px;
+        margin: 50px;
+    }
+    #check:checked ~ ul{
+        right: 0;
+    }
+    #check:checked ~ label #btn{
+        display: none;
+    }
+    #check:checked ~ p{
+        display: none;
+    }
+    #check:checked ~ label #close{
+        display: block;
+    }
+}
