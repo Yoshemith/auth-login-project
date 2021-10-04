@@ -48,6 +48,7 @@ const controller = {
         }
     },
     login: (req, res) => {
+        console.log(req.session)
         res.render('login');
 	},
     loginProcess: (req, res) => {
@@ -55,7 +56,9 @@ const controller = {
         if(userToLogin){
             let isValidPassword = bcryptjs.compareSync(req.body.password, userToLogin.password);
             if(isValidPassword){
-                return res.send('OK si puedes ingresar');
+                delete userToLogin.password; //borrar propiedad password del usuario logeado en el session
+                req.session.userLogged = userToLogin;
+                return res.redirect('/profile');
             }
             return res.render('login', {
                 errors:{
@@ -73,7 +76,13 @@ const controller = {
             }
         });
         //res.send(userToLogin);
-	}
+	},
+    profile: (req, res) => {
+        //console.log(req.session)
+        res.render('profile', {
+            user: req.session.userLogged
+        });
+    }
 }
 
 module.exports = controller;

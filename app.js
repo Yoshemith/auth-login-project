@@ -9,7 +9,11 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 app.use(express.urlencoded({ extended: false }));
-app.use(session({ secret: 'secret coding xd'}));
+app.use(session({
+     secret: 'secret coding xd',
+     resave: false,
+     saveUninitialized: false
+    }));
 app.use(cookieParser());
 
 const mainRouter = require('./routes/main');

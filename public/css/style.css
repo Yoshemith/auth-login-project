@@ -80,6 +80,13 @@ main p a i{
     font-size: 28px;
 }
 
+.main-profile{
+    text-align: center;
+}
+.main-profile h3, div{
+    color: white;
+}
+
 @media (max-width: 992px){
     label #btn{
         display: block;
