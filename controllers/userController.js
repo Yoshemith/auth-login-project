@@ -44,11 +44,11 @@ const controller = {
             let userCreated = User.create(newUser); //usamos el model
             //users.push(newUser);
             //fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
-            res.redirect('/login');//res.send('Se guardo el usuario');
+            res.redirect('/user/login');//res.send('Se guardo el usuario');
         }
     },
     login: (req, res) => {
-        console.log(req.session)
+        //console.log(req.session)
         res.render('login');
 	},
     loginProcess: (req, res) => {
@@ -58,7 +58,7 @@ const controller = {
             if(isValidPassword){
                 delete userToLogin.password; //borrar propiedad password del usuario logeado en el session
                 req.session.userLogged = userToLogin;
-                return res.redirect('/profile');
+                return res.redirect('/user/profile');
             }
             return res.render('login', {
                 errors:{
@@ -82,6 +82,10 @@ const controller = {
         res.render('profile', {
             user: req.session.userLogged
         });
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/');
     }
 }
 

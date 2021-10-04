@@ -9,7 +9,7 @@
 <body>
     <%- include('./header.ejs') %>
     <main class="main-profile">
-        <br>
+        <br><br>
         <h3>Hola <%= user.name %></h3>
         <br>
         <img src="/img/<%= user.image %>" alt="" srcset="">
@@ -17,6 +17,10 @@
         <br>
         <div class="correo">
             <%= user.email %>
+        </div>
+        <br><br>
+        <div class="logout-button">
+            <a href="/user/logout"><button>Log out</button></a>
         </div>
     </main>
 </body>

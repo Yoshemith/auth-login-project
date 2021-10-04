@@ -19,7 +19,7 @@ app.use(cookieParser());
 const mainRouter = require('./routes/main');
 app.use('/', mainRouter);
 const rutasUsers = require('./routes/users');
-app.use(rutasUsers);
+app.use('/user',rutasUsers);
 
 let port = process.env.PORT || 3000;
 
