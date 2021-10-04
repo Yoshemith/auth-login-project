@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const session = require('express-session');
-const cookieParser = require('cookie-parser');
+const cookies = require('cookie-parser');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.set('view engine', 'ejs');
@@ -14,7 +14,7 @@ app.use(session({
      resave: false,
      saveUninitialized: false
     }));
-app.use(cookieParser());
+app.use(cookies());
 app.use(express.static('public'));
 app.use(userLoggedMiddleware); //Middleware de aplicacion
 
@@ -26,5 +26,5 @@ app.use('/user',rutasUsers);
 let port = process.env.PORT || 3000;
 
 app.listen(port, ()=> {
-    console.log('Server running');
+    console.log('Server running at port 3000');
 });

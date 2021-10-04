@@ -9,6 +9,8 @@ const User = require('../models/usersModel');
 
 const controller = {
 	register: (req, res) => {
+        //res.cookie('prueba', 'cookie de prueba', { maxAge: 1000 * 30});
+        console.log(req.cookies.userEmail); //checando cookie
         res.render('register');
 	},
     storeUser: (req, res) => {
@@ -49,6 +51,7 @@ const controller = {
     },
     login: (req, res) => {
         //console.log(req.session)
+        //console.log(req.cookies.prueba);
         res.render('login');
 	},
     loginProcess: (req, res) => {
@@ -58,6 +61,10 @@ const controller = {
             if(isValidPassword){
                 delete userToLogin.password; //borrar propiedad password del usuario logeado en el session
                 req.session.userLogged = userToLogin;
+                //seteando cookie 2minutos
+                if(req.body.recordar){
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2});
+                }
                 return res.redirect('/user/profile');
             }
             return res.render('login', {
@@ -79,11 +86,13 @@ const controller = {
 	},
     profile: (req, res) => {
         //console.log(req.session)
+        //console.log(req.cookies.userEmail); //checando cookie
         res.render('profile', {
             user: req.session.userLogged
         });
     },
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
     }
