@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
+    <nav >
         <input type="checkbox" id="check">
         <label for="check">
             <i class="fas fa-bars" id="btn"></i>
@@ -20,8 +19,24 @@
         </label>
         <h2>Hola, bienvenido!</h2>
         <ul>
-            <li><a href="/user/register">Registro</a></li>
-            <li><a href="/user/login">Login</a></li>
+            <% if (locals.isLogged) { %>
+                <li>
+                    <div class="dropdown">
+                        <button class="dropbtn">
+                            <img src="/img/<%= locals.userLogged.image %>" />
+                            Hi <%= locals.userLogged.name.split(' ')[0] %> 
+                            <i class="fas fa-angle-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href="/user/profile">Profile</a>
+                        <a href="/user/logout">Log out</a>
+                        </div>
+                    </div>
+                </li>
+            <%} else {%>
+                <li><a href="/user/register">Registro</a></li>
+                <li><a href="/user/login">Login</a></li>
+            <% } %>
             <li><a href="/">Explore</a></li>
             <li><a href="/">About</a></li>
             <li><a href="https://github.com/Yoshemith/auth-login-project"><i class="fab fa-github"></i></a></li>

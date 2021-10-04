@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
-app.use(express.static('public'));
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
@@ -15,6 +15,8 @@ app.use(session({
      saveUninitialized: false
     }));
 app.use(cookieParser());
+app.use(express.static('public'));
+app.use(userLoggedMiddleware); //Middleware de aplicacion
 
 const mainRouter = require('./routes/main');
 app.use('/', mainRouter);
